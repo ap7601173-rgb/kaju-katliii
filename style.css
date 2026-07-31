@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #f7f6f1;
+  color: #222;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 0;
+}
+.screen {
+  display: none;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+.screen.active { display: flex; }
+
+.start-card { text-align: center; }
+.start-card h1 {
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(16px, 3vw, 25px);
+  margin: 0 0 12px;
+}
+.start-card h2 {
+  font-family: "Press Start 2P", monospace;
+  color: #a43b32;
+  font-size: 18px;
+  margin: 0 0 26px;
+}
+.big-heart {
+  color: #bd3e32;
+  font-size: 64px;
+  line-height: 1;
+  margin: 10px;
+  text-shadow: 2px 2px 0 #8f332c;
+}
+.exe-button, .red-button, .yes, .no, .blue-button, .outline-button {
+  border: 2px solid #222;
+  box-shadow: 3px 3px 0 #333;
+  padding: 10px 18px;
+  font-weight: bold;
+}
+.exe-button, .red-button, .yes { background: #d84a36; color: white; }
+.no, .blue-button { background: #62b6e8; color: #111; }
+.hint, .tiny { font-size: 11px; opacity: .75; }
+
+.window {
+  width: min(760px, 92vw);
+  background: #f7f7f4;
+  border: 3px solid #252a2d;
+  box-shadow: 7px 7px 0 #394047;
+}
+.titlebar {
+  height: 38px;
+  background: #55b5e7;
+  border-bottom: 3px solid #252a2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+}
+.window-controls { font-size: 9px; letter-spacing: 2px; }
+.window-body { min-height: 390px; padding: 30px; }
+.center { text-align: center; }
+
+.pixel-face {
+  width: 72px;
+  height: 80px;
+  background: #202c3b;
+  margin: 0 auto 25px;
+  position: relative;
+}
+.pixel-face:before, .pixel-face:after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: #bce9f8;
+  top: 27px;
+}
+.pixel-face:before { left: 13px; }
+.pixel-face:after { right: 13px; }
+.pixel-face b {
+  position: absolute;
+  width: 14px;
+  height: 5px;
+  background: #ed7690;
+  left: 29px;
+  top: 49px;
+}
+.pixel-face.dark:before, .pixel-face.dark:after { background: white; }
+
+.message-box {
+  border: 3px solid #30363a;
+  box-shadow: 3px 3px 0 #30363a;
+  text-align: left;
+  padding: 22px;
+  background: #fafafa;
+  line-height: 1.6;
+  min-height: 80px;
+}
+.buttons { margin-top: 28px; display: flex; gap: 25px; justify-content: center; }
+.buttons button { min-width: 68px; }
+
+.reward-body .cute-cat {
+  font-size: 65px;
+  margin: 15px 0;
+}
+.love-points {
+  font-family: "Press Start 2P", monospace;
+  font-size: 18px;
+  margin: 15px 0 25px;
+}
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 3px solid #30363a;
+  box-shadow: 3px 3px 0 #30363a;
+  padding: 12px;
+  text-align: left;
+  margin: 0 auto 35px;
+  max-width: 510px;
+}
+.trophy { color: #a53d35; font-size: 28px; }
+.achievement small, .achievement strong { display:block; }
+.achievement strong { color: #9b3c42; margin-top: 5px; }
+
+.answer-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+.answer-list button {
+  border: 3px solid #30363a;
+  background: #63b9eb;
+  box-shadow: 3px 3px 0 #30363a;
+  padding: 13px;
+  font-weight: bold;
+}
+.answer-list button:hover, .inventory button:hover { transform: translate(2px,2px); box-shadow: 1px 1px 0 #30363a; }
+
+.inventory {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.inventory button {
+  width: 130px;
+  height: 100px;
+  background: #fafafa;
+  border: 3px solid #30363a;
+  box-shadow: 3px 3px 0 #30363a;
+  font-size: 11px;
+}
+.inventory span { display:block; font-size: 30px; margin-bottom: 8px; color:#a94036; }
+
+.envelope { position: relative; font-size: 78px; margin: 30px 0; }
+.envelope em {
+  position: absolute;
+  font-size: 12px;
+  background: #9e3b36;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  top: -3px;
+  right: -8px;
+  font-style: normal;
+}
+.outline-button { background: #fff; }
+
+.item-art { font-size: 105px; margin: 10px; }
+.item-text { font-family: "Press Start 2P", monospace; font-size: 16px; margin: 20px; }
+.back { margin-top: 20px; }
+
+.letter-paper {
+  width: min(600px, 100%);
+  min-height: 260px;
+  border: 3px solid #30363a;
+  box-shadow: 4px 5px 0 #30363a;
+  text-align: left;
+  padding: 25px;
+  line-height: 1.65;
+  background: #fbfbf8;
+  margin-bottom: 30px;
+}
+.dots { text-align:center; color:#d9a9ad; letter-spacing:5px; margin-bottom:12px; }
+
+.loading { text-align:center; }
+.loading h3 { font-family:"Press Start 2P"; font-size:13px; }
+.loader { display:flex; justify-content:center; gap:5px; }
+.loader i { width:12px;height:12px;border:2px solid #444; }
+.loader i:nth-child(1), .loader i:nth-child(2), .loader i:nth-child(3) { background:#d5b5b5; }
+
+.final-card {
+  text-align:center;
+  border:3px solid #30363a;
+  box-shadow:6px 6px 0 #30363a;
+  padding:45px 55px;
+  background:#fafafa;
+}
+.final-card h1 {
+  color:#a13c3b;
+  font-family:"Press Start 2P";
+  font-size:24px;
+}
+.final-card strong { font-size:18px; }
+.final-reward {
+  border:2px solid #30363a;
+  padding:13px;
+  margin:25px 0;
+  color:#9a4a43;
+  font-weight:bold;
+}
+.blue-button { margin-top: 5px; }
+
+@media (max-width: 600px) {
+  .screen { padding: 15px; }
+  .window-body { min-height: 350px; padding: 22px 15px; }
+  .titlebar { font-size: 9px; }
+  .love-points { font-size: 13px; }
+  .final-card { padding: 35px 20px; }
+}

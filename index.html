@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love.exe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- START -->
+    <section id="start" class="screen active">
+      <div class="start-card">
+        <h1>Happy Girlfriend Day</h1>
+        <h2>Tamanna</h2>
+        <div class="big-heart">♥</div>
+        <button class="exe-button" onclick="startGame()">LOVE.exe</button>
+        <p class="hint">Click to launch</p>
+      </div>
+    </section>
+
+    <!-- HELLO.EXE -->
+    <section id="hello" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Hello.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <div class="pixel-face" id="helloFace">
+            <i></i><i></i><b></b>
+          </div>
+          <div class="message-box">
+            Hey Aanya... I made something just for you.<br>
+            Continue?
+          </div>
+          <div class="buttons">
+            <button class="yes" onclick="showReward()">YES</button>
+            <button class="no" id="noBtn" onclick="moveNo()">NO</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REWARD -->
+    <section id="reward" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Reward.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center reward-body">
+          <div class="cute-cat">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+          <div class="love-points">+100 Love Points</div>
+          <div class="achievement">
+            <span class="trophy">♜</span>
+            <span><small>Achievement Unlocked</small><strong>Best Girlfriend</strong></span>
+          </div>
+          <button class="red-button" onclick="showQuestion()">CONTINUE</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUESTION -->
+    <section id="question" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Question.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <div class="pixel-face dark">
+            <i></i><i></i><b></b>
+          </div>
+          <div class="message-box question-text">Do you know how amazing you are?</div>
+          <div class="answer-list">
+            <button onclick="answerQuestion('not')">NOT REALLY</button>
+            <button onclick="answerQuestion('maybe')">MAYBE</button>
+            <button onclick="answerQuestion('yes')">OF COURSE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSE -->
+    <section id="response" class="screen">
+      <div class="window small-window">
+        <div class="titlebar"><span>♥ Question.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <div class="pixel-face dark"><i></i><i></i><b></b></div>
+          <div class="message-box" id="responseText"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVENTORY -->
+    <section id="inventory" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Inventory.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <h3>Inventory</h3>
+          <p class="tiny">Click items to open</p>
+          <div class="inventory">
+            <button onclick="openItem('flowers')"><span>🌷</span>Flowers</button>
+            <button onclick="openItem('hugs')"><span>♥</span>Hugs</button>
+            <button onclick="openItem('letter')"><span>■</span>Letter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITEM -->
+    <section id="item" class="screen">
+      <div class="window">
+        <div class="titlebar"><span id="itemTitle">♥ flowers.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center" id="itemBody"></div>
+      </div>
+    </section>
+
+    <!-- INBOX -->
+    <section id="inbox" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Inbox.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <div class="envelope">✉️<em>1</em></div>
+          <button class="outline-button" onclick="openLetter()">For Your Eyes Only</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section id="letter" class="screen">
+      <div class="window">
+        <div class="titlebar"><span>♥ Inbox.exe</span><div class="window-controls">□ □ ■</div></div>
+        <div class="window-body center">
+          <div class="letter-paper">
+            <div class="dots">● ● ●</div>
+            <p>To the most amazing girlfriend,</p>
+            <p>I just wanted to make this tiny game to remind you how much you mean to me.</p>
+            <p>Every day with you feels like unlocking a new beautiful achievement.</p>
+            <p>Thank you for being you.</p>
+            <p>I love you ❤️</p>
+          </div>
+          <button class="red-button" onclick="finishGame()">BACK</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOADING -->
+    <section id="loading" class="screen">
+      <div class="loading">
+        <div class="big-heart">♥</div>
+        <h3>Loading...</h3>
+        <div class="loader"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="screen">
+      <div class="final-card">
+        <div class="floating">♥</div>
+        <h1>Congratulations!</h1>
+        <p>You completed</p>
+        <strong>Love.exe</strong>
+        <div class="final-reward">Reward: ∞ Love Points</div>
+        <button class="blue-button" onclick="location.reload()">REPLAY</button>
+      </div>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
